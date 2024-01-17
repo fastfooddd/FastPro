@@ -1,19 +1,27 @@
 import { View, Text, Image, TouchableOpacity, ScrollView, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState ,useEffect } from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
+import { Entypo } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+
 
 export default function Login({navigation}) {
 
     const [email , setemail ] = useState("")
     const [password , setpassword] = useState("")
+    const [showpass , setshowpass] = useState("true")
+
+    const togglepassword = () => [
+        setshowpass(!showpass) 
+    ]
   
 
   return (
     <View style={{
         flex:1,
-    }}>
+        }}>
         <LinearGradient
-          colors={['#a044ff','#ffff']}
+          colors={['#2a0845','#948E99']}
           style={{
             width:'100%',
             height:'100%',
@@ -40,17 +48,24 @@ export default function Login({navigation}) {
                     height:'5.5%',
                     backgroundColor:'#692099',
                     marginTop:'10%',
-                    justifyContent:'center',
+                    justifyContent:'flex-start',
                     borderRadius:5,
                     borderWidth:1,
-                    borderColor:'#ECE8E8'
-                    
+                    borderColor:'#ECE8E8',
+                    flexDirection:'row' ,
+                    alignItems:'center'                    
                 }}>
+                    <Feather name="user" size={24} color="#ffff" 
+                    style={{
+                        marginLeft: 10
+                    }}
+
+                    />
                    <TextInput 
                    style={{
                     paddingHorizontal:10,
                    }}
-                   placeholder='กรอกอีเมล'
+                   placeholder='@rmutp.ac.th'
                    fontsize={16}
                    placeholderTextColor='#ffff'
                    onChangeText={(Text)=>setemail(Text)}
@@ -61,40 +76,101 @@ export default function Login({navigation}) {
                     width:'80%',
                     height:'5.5%',
                     backgroundColor:'#692099',
-                    marginTop:'1%',
-                    justifyContent:'center',
+                    marginTop:'3%',
+                    justifyContent:'flex-start',
+                    alignItems:'center',
                     borderRadius:5,
                     borderWidth:1,
-                    borderColor:'#ECE8E8'
-                    
+                    borderColor:'#ECE8E8', 
+                    flexDirection: 'row',
+                    // justifyContent: 'space-around'
                 }}>
+                    <Feather name="key" size={24} color="#ffff" 
+                    style = {{
+                        marginLeft: 10,
+                    }}
+                    />
+
                    <TextInput 
                    style={{
-                    paddingHorizontal:10,
+                    width: '75%',
+                    height: '50%',
+
+                    marginLeft: 10 ,
+                    justifyContent: 'flex-end',
                    }}
                    placeholder='รหัสผ่าน'
                    fontsize={16}
                    placeholderTextColor='#ffff'
                    onChangeText={(Text)=>setemail(Text)}
-                   secureTextEntry={true}
+                //    secureTextEntry={showpass}
+
+                   
                    />
+                   <TouchableOpacity style = {{
+                    width:'10%',
+                    height:'100%',
+                    marginRight: 10 ,
+                    justifyContent:'center',
+                    alignItems:'center'
+                    
+                   }}
+                  onPress={togglepassword}
+                >{showpass ? (
+                  <Entypo name="eye" size={24} color="#ffff" 
+                  
+                  />
+                ) : (
+                  <Entypo name="eye-with-line" size={24} color="#ffff" />
+                )}
+                </TouchableOpacity>
                     
                 </View>
+                {/* ปุ่ม Login */}
                 <TouchableOpacity
-                onPress={()=> navigation.navigate('Register')}
+                onPress={()=> navigation.navigate('HomePage')}
                 style={{
                     width:'80%',
-                    height:'5.5%',
+                    height:'6%',
                     backgroundColor:'#692099',
-                    marginTop:'1%',
+                    marginTop:'20%',
                     justifyContent:'center',
                     alignItems:'center',
                     borderRadius:5,
                     borderWidth:1,
                     borderColor:'#ECE8E8'
                 }}>
-                     <Text>
-                        login
+                     <Text 
+                        style={{ 
+                            fontSize: 16, 
+                            fontWeight: 'bold',
+                            color: '#ffff'}}
+                        >
+                        Login
+                    </Text>
+
+                </TouchableOpacity>
+                {/* ปุ่ม Register */}
+                <TouchableOpacity
+                onPress={()=> navigation.navigate('Register')}
+                style={{
+                    width:'80%',
+                    height:'6%',
+                    backgroundColor:'#692099',
+                    marginTop:'2%',
+                    justifyContent:'center',
+                    alignItems:'center',
+                    borderRadius:5,
+                    borderWidth:1,
+                    borderColor:'#ECE8E8'
+                }}>
+                     <Text
+                     style={{ 
+                            fontSize: 16, 
+                            fontWeight: 'bold',
+                            color: '#ffff'}}
+                    >
+                        Register
                     </Text>
 
                 </TouchableOpacity>
