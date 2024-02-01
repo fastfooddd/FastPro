@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
 
-export default function HomePage({navigation}) {
+export default function Chat({navigation}) {
   return (
     <View style={{
       flex: 1,
@@ -64,10 +64,9 @@ export default function HomePage({navigation}) {
             <Text
               style={{
                 bottom: 100,
-                fontSize: 18,
+                fontSize: 19,
                 marginLeft:30,
                 color: 'gray',
-
               }}
             >
               รหัสนักศึกษา
@@ -88,33 +87,152 @@ export default function HomePage({navigation}) {
             </Text>
           </View>
         </View>
-        <View style={{
-            width: '90%',
-            height: '60%',
-            justifyContent: 'center',
-            // backgroundColor:'black',s
-            // position:'absolute',
-            marginLeft:'5%',
-            marginTop:'45%',
-          }} >
-            <Image
-            source={require('../assets/news.jpg')}
+       
+            {/* กรอบข้อความ */}
+            <TouchableOpacity
+            onPress={()=> navigation.navigate('Comment')}
             style={{
-              // resizeMode: 'contain',
-              justifyContent:'center',
-              height: '100%',
-              width: '100%',
-              // marginLeft: '20%',
-              // top:'5%',
-              resizeMode:'stretch',
-              marginRight:'20%',
+                width:'90%',
+                height:'10%',
+                backgroundColor: '#C4AADD',
+                justifyContent:'center',
+                alignItems:'center',
+                position:'absolute',
+                marginLeft:'5%',
+                marginTop:'40%',
+                borderRadius: 15
+                
+            }}>
+            <Text
+            style={{
+            width:'100%',
+            height:'100%',
+            position:'absolute',
+            marginRight:'30%',
+            fontSize:20,
+            
+            }}>
+                P.ฟาส ปี3
+            </Text>
 
-            }} />
+            <Text style={{
+                width:'100%',
+                height:'100%',
+                position:'absolute',
+                marginRight:'30%',
+                marginTop:'50%',
+                fontSize:15,
+            }}>
+                เสาร์ มี ติวแคลให้น้องๆ ปี1 ร้านกาแฟ หน้ามอ
+            </Text>
+            </TouchableOpacity>
+
+
+
+            <View
+            style={{
+                width:'90%',
+                height:'10%',
+                backgroundColor: '#C4AADD',
+                justifyContent:'center',
+                alignItems:'center',
+                position:'absolute',
+                marginLeft:'5%',
+                marginTop:'70%',
+                borderRadius:15 ,
+            }}>
+              
+              <Text
+            style={{
+            width:'100%',
+            height:'100%',
+            position:'absolute',
+            marginRight:'30%',
+            fontSize:20,
+            
+            }}>
+                P.ฟาส ปี3
+            </Text>
+
+            <Text style={{
+                width:'100%',
+                height:'100%',
+                position:'absolute',
+                marginRight:'30%',
+                marginTop:'50%',
+                fontSize:15,
+            }}>
+                เสาร์ มี ติวแคลให้น้องๆ ปี1 ร้านกาแฟ หน้ามอ
+            </Text>
+
+            </View>
+
+
+
+            <View
+            style={{
+                width:'90%',
+                height:'10%',
+                backgroundColor: '#C4AADD',
+                justifyContent:'center',
+                alignItems:'center',
+                position:'absolute',
+                marginLeft:'5%',
+                marginTop:'102%',
+                borderRadius: 15
+            }}>
+              
+              <Text
+            style={{
+            width:'100%',
+            height:'100%',
+            position:'absolute',
+            marginRight:'30%',
+            fontSize:20,
+            
+            }}>
+                P.ฟาส ปี3
+            </Text>
+
+            <Text style={{
+                width:'100%',
+                height:'100%',
+                position:'absolute',
+                marginRight:'30%',
+                marginTop:'50%',
+                fontSize:15,
+            }}>
+                เสาร์ มี ติวแคลให้น้องๆ ปี1 ร้านกาแฟ หน้ามอ
+            </Text>
+
+            </View>
+
+                      {/* /////////////////////////ChatA//////////////////////////*/}
+            <TouchableOpacity 
+            onPress={()=> navigation.navigate('ChatA')}
+            style={{
+                width:'15%',
+                height:'7%',
+                // position:"absolute",
+                // backgroundColor:'white',
+                marginLeft:'83%',
+                marginTop:'165%',
+                // borderWidth:1,
+                borderColor:'purple',
+                justifyContent:'center',
+                alignItems:'center',                
+            }}>
+            <AntDesign style={{
+            }} name="pluscircle" size={50} color="gray" />
+            
             
 
-          
-        </View>
-          
+            </TouchableOpacity>
+
+
+
+
+           {/* ///////////////////////////////////// footer /////////////////////////////////////////////*/}
         <View 
         style={{
           width: '100%',
@@ -209,7 +327,7 @@ export default function HomePage({navigation}) {
             <TouchableOpacity
                 onPress={()=> navigation.navigate('ST')}
                 style={{
-                  width:'23%',
+                  width:'24%',
                   height:'80%',
                 }}>
                      <View style={{

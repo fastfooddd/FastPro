@@ -3,6 +3,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./Screen/Login";
 import Register from "./Screen/Register";
 import HomePage from "./Screen/HomePage";
+import Chat from "./Screen/Chat";
+import ChatA from "./Screen/ChatA";
+import ST from "./Screen/ST";
+import Comment from "./Screen/Comment";
+import LoginA from "./Screen/LoginA";
+import RegisterA from "./Screen/RegisterA";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,8 +18,8 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
 
       <Stack.Screen 
-      name="Login" 
-      component={Login}
+      name="LoginA" 
+      component={LoginA}
       options={{ headerShown:false}} />
       <Stack.Screen 
       name="Register" 
@@ -23,6 +29,26 @@ export default function App() {
       name="HomePage" 
       component={HomePage}
       options={{ headerShown:false}} /> 
+      <Stack.Screen
+       name="Chat" 
+       component={Chat}
+       options={{ headerShown:false}} /> 
+       <Stack.Screen
+       name="ChatA" 
+       component={ChatA}
+       options={{ headerShown:false}} /> 
+       <Stack.Screen
+       name="ST" 
+       component={ST}
+       options={{ headerShown:false}} />
+       <Stack.Screen 
+      name="Comment" 
+      component={Comment}
+      options={{ headerShown:false}} />
+       <Stack.Screen 
+      name="RegisterA" 
+      component={RegisterA}
+      options={{ headerShown:false}} />
 
 
       </Stack.Navigator>

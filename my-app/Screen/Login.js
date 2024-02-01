@@ -99,7 +99,7 @@ export default function Login({navigation}) {
                     marginLeft: 10 ,
                     justifyContent: 'flex-end',
                    }}
-                   placeholder='รหัสผ่าน'
+                   placeholder='Password'
                    fontsize={16}
                    placeholderTextColor='#ffff'
                    onChangeText={(Text)=>setemail(Text)}
@@ -128,7 +128,7 @@ export default function Login({navigation}) {
                 </View>
                 {/* ปุ่ม Login */}
                 <TouchableOpacity
-                onPress={()=> navigation.navigate('HomePage')}
+                onPress={()=> navigation.navigate('LoginA')}
                 style={{
                     width:'80%',
                     height:'6%',
@@ -180,4 +180,3 @@ export default function Login({navigation}) {
         </View>
   )
         }
-            
