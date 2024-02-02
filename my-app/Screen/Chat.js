@@ -1,12 +1,14 @@
-import { View, Text, Image, TouchableOpacity,TouchableOpacity1,TouchableOpacity2, ScrollView, TextInput } from 'react-native'
+import { View, Text, Image, TouchableOpacity, TouchableOpacity1, TouchableOpacity2, ScrollView, TextInput } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { Foundation } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 
-export default function Chat({navigation}) {
+export default function Chat({ navigation }) {
   return (
     <View style={{
       flex: 1,
@@ -25,9 +27,9 @@ export default function Chat({navigation}) {
             height: '15%',
             justifyContent: 'center',
             // backgroundColor:'red',
-            position:'absolute',
-            marginLeft:'5%',
-            marginTop:'15%',
+            position: 'absolute',
+            marginLeft: '5%',
+            marginTop: '15%',
           }} >
           <Image
             source={require('../assets/L1.jpg')}
@@ -37,14 +39,14 @@ export default function Chat({navigation}) {
               height: 60,
               borderRadius: 60 / 2,
               marginLeft: '80%',
-              top:'9%',
+              top: '9%',
 
             }} />
 
           <AntDesign style={{
-          position:'absolute',
-          marginTop:'14%',
-          marginLeft:'2%',
+            position: 'absolute',
+            marginTop: '14%',
+            marginLeft: '2%',
           }} name="user" size={19} color="gray" />
           <View>
             <Text
@@ -52,10 +54,10 @@ export default function Chat({navigation}) {
                 bottom: 100,
                 width: 250,
                 fontSize: 30,
-                marginLeft:5,
-                marginTop:50,
+                marginLeft: 5,
+                marginTop: 50,
                 color: 'black',
-                fontWeight:'bold'
+                fontWeight: 'bold'
               }}
             >
               แจ็ค แปปโฮ
@@ -65,7 +67,7 @@ export default function Chat({navigation}) {
               style={{
                 bottom: 100,
                 fontSize: 19,
-                marginLeft:30,
+                marginLeft: 30,
                 color: 'gray',
               }}
             >
@@ -76,10 +78,10 @@ export default function Chat({navigation}) {
               style={{
                 bottom: 103,
                 fontSize: 12,
-                marginLeft:'38%',
+                marginLeft: '38%',
                 color: 'gray',
-                position:'absolute',
-                
+                position: 'absolute',
+
 
               }}
             >
@@ -87,260 +89,165 @@ export default function Chat({navigation}) {
             </Text>
           </View>
         </View>
-       
-            {/* กรอบข้อความ */}
-            <TouchableOpacity
-            onPress={()=> navigation.navigate('Comment')}
-            style={{
-                width:'90%',
-                height:'10%',
-                backgroundColor: '#C4AADD',
-                justifyContent:'center',
-                alignItems:'center',
-                position:'absolute',
-                marginLeft:'5%',
-                marginTop:'40%',
-                borderRadius: 15
-                
-            }}>
-            <Text
-            style={{
-            width:'100%',
-            height:'100%',
-            position:'absolute',
-            marginRight:'30%',
-            fontSize:20,
-            
-            }}>
-                P.ฟาส ปี3
-            </Text>
-
-            <Text style={{
-                width:'100%',
-                height:'100%',
-                position:'absolute',
-                marginRight:'30%',
-                marginTop:'50%',
-                fontSize:15,
-            }}>
-                เสาร์ มี ติวแคลให้น้องๆ ปี1 ร้านกาแฟ หน้ามอ
-            </Text>
-            </TouchableOpacity>
-
-
-
-            <View
-            style={{
-                width:'90%',
-                height:'10%',
-                backgroundColor: '#C4AADD',
-                justifyContent:'center',
-                alignItems:'center',
-                position:'absolute',
-                marginLeft:'5%',
-                marginTop:'70%',
-                borderRadius:15 ,
-            }}>
-              
-              <Text
-            style={{
-            width:'100%',
-            height:'100%',
-            position:'absolute',
-            marginRight:'30%',
-            fontSize:20,
-            
-            }}>
-                P.ฟาส ปี3
-            </Text>
-
-            <Text style={{
-                width:'100%',
-                height:'100%',
-                position:'absolute',
-                marginRight:'30%',
-                marginTop:'50%',
-                fontSize:15,
-            }}>
-                เสาร์ มี ติวแคลให้น้องๆ ปี1 ร้านกาแฟ หน้ามอ
-            </Text>
-
-            </View>
-
-
-
-            <View
-            style={{
-                width:'90%',
-                height:'10%',
-                backgroundColor: '#C4AADD',
-                justifyContent:'center',
-                alignItems:'center',
-                position:'absolute',
-                marginLeft:'5%',
-                marginTop:'102%',
-                borderRadius: 15
-            }}>
-              
-              <Text
-            style={{
-            width:'100%',
-            height:'100%',
-            position:'absolute',
-            marginRight:'30%',
-            fontSize:20,
-            
-            }}>
-                P.ฟาส ปี3
-            </Text>
-
-            <Text style={{
-                width:'100%',
-                height:'100%',
-                position:'absolute',
-                marginRight:'30%',
-                marginTop:'50%',
-                fontSize:15,
-            }}>
-                เสาร์ มี ติวแคลให้น้องๆ ปี1 ร้านกาแฟ หน้ามอ
-            </Text>
-
-            </View>
-
-                      {/* /////////////////////////ChatA//////////////////////////*/}
-            <TouchableOpacity 
-            onPress={()=> navigation.navigate('ChatA')}
-            style={{
-                width:'15%',
-                height:'7%',
-                // position:"absolute",
-                // backgroundColor:'white',
-                marginLeft:'83%',
-                marginTop:'165%',
-                // borderWidth:1,
-                borderColor:'purple',
-                justifyContent:'center',
-                alignItems:'center',                
-            }}>
-            <AntDesign style={{
-            }} name="pluscircle" size={50} color="gray" />
-            
-            
-
-            </TouchableOpacity>
-
-
-
-
-           {/* ///////////////////////////////////// footer /////////////////////////////////////////////*/}
-        <View 
-        style={{
+        {/* /////////// CHAT BOX //////////// */}
+        <View style={{
           width: '100%',
-          height: '10%',
-          marginTop:'190%',
-          position:'absolute',
-          backgroundColor:'#430669',
-          
-        }} >
-
-        <View style>
-        <Ionicons style={{
-          marginLeft:'10%',
-          marginTop:'6%',
-        }} name="home-outline" size={30} color="white" />
-        </View>
-        
-           {/* //////////////////////////////////////ใส่ลบได้ปะวะ////////////////////////////////////// */}
-        <View>
-        <Ionicons style={{
-          marginLeft:'46%',
-          marginTop:'-7%',
-        }} name="chatbox-ellipses-sharp" size={30} color="white" />
-        </View>
-
-        <View>
-        <Feather style={{
-          marginLeft:'80%',
-          marginTop:'-7%',
-
-        }} name="settings" size={24} color="white" />
-        </View>
-
-        
-        <View style={{
-          width:'25%',
-          height:'90%',
-          // backgroundColor:'red',
-          marginLeft:'2%',
-          marginTop: '-13%',
+          height: '75%',
+          backgroundColor: '#EEE9E9',
+          marginTop: '40%',
+          alignItems: 'center',
+          borderTopWidth: 0.2,
         }}>
-            <TouchableOpacity
-                onPress={()=> navigation.navigate('HomePage')}
-                style={{
-                  width:'24%',
-                  height:'80%',
-                }}>
-                     <View style={{
-                      width:'500%',
-                      height:'130%',
-                      backgroundColor:'green',
-                      opacity:0.2,
-                     }}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Comment')}
+            style={{
+              width: '95%',
+              height: '30%',
+              marginTop: '2%',
+              borderRadius: 20,
+              backgroundColor: 'white'
+            }}>
 
-                     </View>
+          </TouchableOpacity>
 
-                </TouchableOpacity>
+
         </View>
+        {/* /////////// CHAT BOX //////////// */}
 
-        <View style={{
-          width:'25%',
-          height:'90%',
-          // backgroundColor:'red',
-          marginLeft:'34%',
-          marginTop: '-19%',
-        }}>
+        {/* /////////////////////////ChatA//////////////////////////*/}
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ChatA')}
+          style={{
+            width: '15%',
+            height: '7%',
+            // position:"absolute",
+            // backgroundColor:'white',
+            marginLeft: '83%',
+            marginTop: '165%',
+            // borderWidth:1,
+            borderColor: 'purple',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <AntDesign style={{
+          }} name="pluscircle" size={50} color="gray" />
+
+
+
+        </TouchableOpacity>
+
+
+
+
+        {/* ///////////////////////////////////// footer /////////////////////////////////////////////*/}
+        <View
+          style={{
+            width: '100%',
+            height: '10%',
+            marginTop: '190%',
+            position: 'absolute',
+            backgroundColor: 'white',
+            borderTopWidth: 0.2,
+
+          }} >
+
+          <View style>
+            <Foundation style={{
+              marginLeft: '10%',
+              marginTop: '6%',
+            }} name="home" size={30} color="gray" />
+          </View>
+
+          <View>
+            <Ionicons style={{
+              marginLeft: '46%',
+              marginTop: '-7%',
+            }} name="chatbubble-ellipses" size={30} color="purple" />
+          </View>
+
+          <View>
+            <Ionicons style={{
+              marginLeft: '80%',
+              marginTop: '-7%',
+
+            }} name="settings-sharp" size={28} color="gray" />
+          </View>
+
+
+          <View style={{
+            width: '25%',
+            height: '90%',
+            // backgroundColor:'red',
+            marginLeft: '2%',
+            marginTop: '-13%',
+          }}>
             <TouchableOpacity
-                onPress={()=> navigation.navigate('Chat')}
-                style={{
-                  width:'24%',
-                  height:'80%',
-                }}>
-                     <View style={{
-                      width:'500%',
-                      height:'130%',
-                      backgroundColor:'green',
-                      opacity:0.2,
-                     }}>
+              onPress={() => navigation.navigate('HomePage')}
+              style={{
+                width: '24%',
+                height: '80%',
+              }}>
+              <View style={{
+                width: '500%',
+                height: '130%',
+                // backgroundColor:'green',
+                opacity: 0.2,
+              }}>
 
-                     </View>
+              </View>
 
-                </TouchableOpacity>
-        </View>
+            </TouchableOpacity>
+          </View>
 
-        <View style={{
-          width:'25%',
-          height:'90%',
-          // backgroundColor:'red',
-          marginLeft:'66%',
-          marginTop: '-19%',
-        }}>
+          <View style={{
+            width: '25%',
+            height: '90%',
+            // backgroundColor:'red',
+            marginLeft: '34%',
+            marginTop: '-19%',
+          }}>
             <TouchableOpacity
-                onPress={()=> navigation.navigate('ST')}
-                style={{
-                  width:'24%',
-                  height:'80%',
-                }}>
-                     <View style={{
-                      width:'500%',
-                      height:'130%',
-                      backgroundColor:'green',
-                      opacity:0.2,
-                     }}>
+              onPress={() => navigation.navigate('Chat')}
+              style={{
+                width: '24%',
+                height: '80%',
+              }}>
+              <View style={{
+                width: '500%',
+                height: '130%',
+                // backgroundColor:'green',
+                opacity: 0.2,
+              }}>
 
-                     </View>
+              </View>
 
-                </TouchableOpacity>
-        </View>
+            </TouchableOpacity>
+          </View>
+
+          <View style={{
+            width: '25%',
+            height: '90%',
+            // backgroundColor:'red',
+            marginLeft: '66%',
+            marginTop: '-19%',
+          }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ST')}
+              style={{
+                width: '24%',
+                height: '80%',
+              }}>
+              <View style={{
+                width: '500%',
+                height: '130%',
+                // backgroundColor:'green',
+                opacity: 0.2,
+              }}>
+
+              </View>
+
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>

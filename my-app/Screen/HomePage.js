@@ -1,9 +1,10 @@
-import { View, Text, Image, TouchableOpacity,TouchableOpacity1,TouchableOpacity2, ScrollView, TextInput } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, TextInput, StyleSheet  } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { Foundation } from '@expo/vector-icons';
 
 
 export default function HomePage({navigation}) {
@@ -11,8 +12,8 @@ export default function HomePage({navigation}) {
     <View style={{
       flex: 1,
     }}>
-      <View
-        backgroundColor='white'
+      <LinearGradient
+        colors={['#5D0F8E','#AA64F0']}
         style={{
           width: '100%',
           height: '100%',
@@ -30,6 +31,7 @@ export default function HomePage({navigation}) {
             marginTop:'15%',
           }} >
           <Image
+          
             source={require('../assets/L1.jpg')}
             style={{
               resizeMode: 'contain',
@@ -45,7 +47,7 @@ export default function HomePage({navigation}) {
           position:'absolute',
           marginTop:'14%',
           marginLeft:'2%',
-          }} name="user" size={19} color="gray" />
+          }} name="user" size={19} color="white" />
           <View>
             <Text
               style={{
@@ -54,7 +56,7 @@ export default function HomePage({navigation}) {
                 fontSize: 30,
                 marginLeft:5,
                 marginTop:50,
-                color: 'black',
+                color: 'white',
                 fontWeight:'bold'
               }}
             >
@@ -63,10 +65,10 @@ export default function HomePage({navigation}) {
 
             <Text
               style={{
-                bottom: 100,
-                fontSize: 18,
+                bottom: 99,
+                fontSize: 15,
                 marginLeft:30,
-                color: 'gray',
+                color: 'white',
 
               }}
             >
@@ -75,10 +77,10 @@ export default function HomePage({navigation}) {
 
             <Text
               style={{
-                bottom: 103,
-                fontSize: 12,
-                marginLeft:'38%',
-                color: 'gray',
+                bottom: 101,
+                fontSize: 10,
+                marginLeft:'35%',
+                color: 'white',
                 position:'absolute',
                 
 
@@ -88,64 +90,79 @@ export default function HomePage({navigation}) {
             </Text>
           </View>
         </View>
+        {/* ///////////////////////////////////////////////////////////////////////////// */}
+
         <View style={{
-            width: '90%',
-            height: '60%',
-            justifyContent: 'center',
-            // backgroundColor:'black',s
+            width: '100%',
+            height: '75%',
+            alignItems:'center',
+            backgroundColor:'white',
+            borderTopRightRadius:40,
+            borderTopLeftRadius:40,
             // position:'absolute',
-            marginLeft:'5%',
-            marginTop:'45%',
+            // marginLeft:'5%',
+            marginTop:'55%',
           }} >
+            <View style={{
+              width:'85%',
+              height:'60%',
+              // alignItems:'center',
+              justifyContent:'center',
+              marginTop:'10%',
+              backgroundColor:'red'
+            }}>
             <Image
             source={require('../assets/news.jpg')}
             style={{
               // resizeMode: 'contain',
               justifyContent:'center',
+              alignItems:'center',
               height: '100%',
               width: '100%',
-              // marginLeft: '20%',
-              // top:'5%',
+              // marginLeft: '10%',
               resizeMode:'stretch',
               marginRight:'20%',
 
             }} />
             
-
+          </View>
           
         </View>
           
+          {/* //////////////////////////////////////////////////////////////////////////////// */}
+
         <View 
         style={{
           width: '100%',
           height: '10%',
           marginTop:'190%',
           position:'absolute',
-          backgroundColor:'#430669',
+          backgroundColor:'white',
+          borderTopWidth:0.2,
+          
           
         }} >
 
         <View style>
-        <Ionicons style={{
+        <Foundation style={{
           marginLeft:'10%',
           marginTop:'6%',
-        }} name="home-outline" size={30} color="white" />
+        }} name="home" size={30} color="purple" />
         </View>
         
-           {/* //////////////////////////////////////ใส่ลบได้ปะวะ////////////////////////////////////// */}
         <View>
         <Ionicons style={{
           marginLeft:'46%',
           marginTop:'-7%',
-        }} name="chatbox-ellipses-sharp" size={30} color="white" />
+        }} name="chatbubble-ellipses" size={30} color="gray" />
         </View>
 
         <View>
-        <Feather style={{
+        <Ionicons style={{
           marginLeft:'80%',
           marginTop:'-7%',
 
-        }} name="settings" size={24} color="white" />
+        }} name="settings-sharp" size={28} color="gray" />
         </View>
 
         
@@ -165,7 +182,7 @@ export default function HomePage({navigation}) {
                      <View style={{
                       width:'500%',
                       height:'130%',
-                      backgroundColor:'green',
+                      // backgroundColor:'green',
                       opacity:0.2,
                      }}>
 
@@ -190,7 +207,7 @@ export default function HomePage({navigation}) {
                      <View style={{
                       width:'500%',
                       height:'130%',
-                      backgroundColor:'green',
+                      // backgroundColor:'green',
                       opacity:0.2,
                      }}>
 
@@ -215,7 +232,7 @@ export default function HomePage({navigation}) {
                      <View style={{
                       width:'500%',
                       height:'130%',
-                      backgroundColor:'green',
+                      // backgroundColor:'green',
                       opacity:0.2,
                      }}>
 
@@ -224,7 +241,11 @@ export default function HomePage({navigation}) {
                 </TouchableOpacity>
         </View>
         </View>
-      </View>
+      </LinearGradient>
     </View>
-  )
-}
+  );
+};
+
+
+
+const style = StyleSheet.create({});
