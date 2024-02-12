@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, ScrollView, TextInput, StyleSheet  } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, TextInput, StyleSheet,SafeAreaView,Platform, StatusBar  } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign } from '@expo/vector-icons';
@@ -42,6 +42,7 @@ export default function HomePage({navigation}) {
               top:'9%',
 
             }} />
+            
 
           <AntDesign style={{
           position:'absolute',

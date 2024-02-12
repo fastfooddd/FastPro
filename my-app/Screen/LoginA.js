@@ -2,15 +2,56 @@ import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { Entypo } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { firebase } from '../firebase';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 export default function LoginA({ navigation }) {
-    const [email, setemail] = useState("")
-    const [password, setpassword] = useState("")
-    const [showpass, setshowpass] = useState("true")
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [showpass, setshowpass] = useState('true')
 
-    const togglepassword = () => [
-        setshowpass(!showpass)
-    ]
+    const togglepassword = () => [setshowpass(!showpass)]
+    const handleSignUp = () => {
+        console.log('email==> ', email);
+        console.log('password==> ', password);
+  
+  
+  
+    //     const handleSignup = getAuth(); 
+    //     //  console.log("auth: ",auth);
+    //     createUserWithEmailAndPassword(handleSignup, email, password)
+    //       .then((userCredential) => {
+    //         console.log("userCredential: ", userCredential);
+    //         // Rigister
+    //         const user = userCredential.user.uid;
+           
+    //         firebase.firestore().collection('Users').doc(user).set({
+              
+    //           email : email,
+             
+             
+    //           Password : password
+  
+    //         });
+    //         firebase
+    //         .firestore()
+    //         .collection("Users")
+    //         // .doc("All")
+    //         .update({
+    //           ListName: firebase.firestore.FieldValue.arrayUnion({
+    //             email: email,
+    //             name: name,
+    //           }),
+    //         });
+    //     })
+    //     .catch(function (error) {
+    //       console.log("Error getting document: ", error);
+    //     });
+    };
+
+   
+    
 
     return (
         <View
@@ -66,9 +107,10 @@ export default function LoginA({ navigation }) {
                             paddingHorizontal: 10,
                         }}
                         placeholder='@rmutp.ac.th'
+                        value={email}
                         fontsize={16}
                         placeholderTextColor='gray'
-                        onChangeText={(Text) => setemail(Text)}
+                        onChangeText={(Text) => setEmail(Text)}
                     />
                     {/* รหัสผ่าน     */}
 
@@ -101,10 +143,11 @@ export default function LoginA({ navigation }) {
                             justifyContent: 'flex-end',
                         }}
                         placeholder='Password'
+                        value={password}
                         fontsize={16}
                         placeholderTextColor='glay'
-                        onChangeText={(Text) => setpassword(Text)}
-                        // secureTextEntry={showpass}
+                        onChangeText={(Text) => setPassword(Text)}
+                    // secureTextEntry={showpass}
 
 
                     />
@@ -161,6 +204,7 @@ export default function LoginA({ navigation }) {
                     </View>
                     <TouchableOpacity
                         onPress={() => navigation.navigate('RegisterA')}
+                        // onPress={handleSignUp}
                         style={{
                             marginLeft: 10
                         }}>

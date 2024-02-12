@@ -6,6 +6,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Foundation } from '@expo/vector-icons';
 import { TextInput } from 'react-native-paper';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 export default function Comment({ navigation }) {
   return (
@@ -13,7 +15,7 @@ export default function Comment({ navigation }) {
       flex: 1,
     }}>
       <View
-        backgroundColor='white'
+        backgroundColor='#EEE9E9'
         style={{
           width: '100%',
           height: '100%',
@@ -22,33 +24,43 @@ export default function Comment({ navigation }) {
       >
         <View
           style={{
-            width: '90%',
+            width: '100%',
             height: '15%',
             justifyContent: 'center',
-            // backgroundColor:'red',
+            backgroundColor:'#5D0F8E', 
             position: 'absolute',
-            marginLeft: '5%',
-            marginTop: '15%',
+            // marginLeft: '5%',
+            // marginTop: '15%',
           }} >
-          <Image
+            <TouchableOpacity 
+            onPress={()=> navigation.navigate('Chat')}
+            style={{}}>
+
+        <Entypo style={{
+            position:'absolute',
+            marginLeft:'5%',
+            // marginTop:'10%',
+        }} name="chevron-left" size={30} color="white"/>
+       </TouchableOpacity>  
+          {/* <Image
             source={require('../assets/L1.jpg')}
             style={{
               resizeMode: 'contain',
               width: 60,
               height: 60,
               borderRadius: 60 / 2,
-              marginLeft: '75%',
+              marginLeft: '80%',
               top: '9%',
 
-            }} />
+            }} /> */}
 
-          <AntDesign style={{
+          {/* <AntDesign style={{
             position: 'absolute',
             marginTop: '14%',
             marginLeft: '2%',
-          }} name="user" size={19} color="gray" />
+          }} name="user" size={19} color="gray" /> */}
           <View>
-            <Text
+            {/* <Text
               style={{
                 bottom: 100,
                 width: 250,
@@ -84,7 +96,7 @@ export default function Comment({ navigation }) {
               }}
             >
               056350405072-2
-            </Text>
+            </Text> */}
           </View>
         </View>
 
@@ -93,7 +105,7 @@ export default function Comment({ navigation }) {
           width: '100%',
           height: '75%',
           backgroundColor: '#EEE9E9',
-          marginTop: '40%',
+          marginTop: '30%',
           alignItems: 'center',
           borderTopWidth: 0.2,
         }}>
@@ -108,6 +120,25 @@ export default function Comment({ navigation }) {
             }}>
 
           </View>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ChatA')}
+            style={{
+              width: 60,
+              height: 60,
+              borderRadius: 60 / 2,
+              marginTop: '80%',
+              marginLeft:'80%',
+              alignItems:'center',
+              justifyContent:'center',
+              // borderRadius: 20,
+              backgroundColor: '#D69CEF'
+            }}>
+              <MaterialCommunityIcons style={{
+                
+              }} name="message-plus-outline" size={40} color="#483D8B" />
+
+          </TouchableOpacity>
 
 
         </View>
@@ -157,7 +188,7 @@ export default function Comment({ navigation }) {
             <Ionicons style={{
               marginLeft: '46%',
               marginTop: '-7%',
-            }} name="chatbubble-ellipses" size={30} color="purple" />
+            }} name="chatbubble-ellipses" size={30} color="gray" />
           </View>
 
           <View>

@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 
 export default function ST({navigation}) {
@@ -11,11 +12,11 @@ export default function ST({navigation}) {
     <View style={{
       flex: 1,
     }}>
-      <LinearGradient
-        colors={['#2a0845', '#948E99']}
+      <View
         style={{
           width: '100%',
           height: '100%',
+          backgroundColor:'white'
         }}>
          
 
@@ -28,18 +29,18 @@ export default function ST({navigation}) {
               backgroundColor:'Red',
               position:'absolute',
              marginTop:'1%',
-
+<Entypo name="chevron-left" size={24} color="black" />
           }}/> */}
 
             <TouchableOpacity 
             onPress={()=> navigation.navigate('HomePage')}
             style={{}}>
 
-        <Ionicons style={{
+        <Entypo style={{
             position:'absolute',
             marginLeft:'5%',
-            marginTop:'10%',
-        }} name="arrow-back" size={25} color="white"/>
+            marginTop:'13%',
+        }} name="chevron-left" size={30} color="black"/>
        </TouchableOpacity>   
 
 
@@ -71,8 +72,10 @@ export default function ST({navigation}) {
             }}>
            <Text style={{
             color:'white',
+            fontWeight:'bold',
+            fontSize:18
            }}>
-            Log out
+            Logout
            </Text>
             
     
@@ -85,7 +88,7 @@ export default function ST({navigation}) {
 
 
 
-      </LinearGradient>
+      </View>
     </View>
   )
 }

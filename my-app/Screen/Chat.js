@@ -5,7 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Foundation } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 export default function Chat({ navigation }) {
@@ -107,6 +107,25 @@ export default function Chat({ navigation }) {
               borderRadius: 20,
               backgroundColor: 'white'
             }}>
+
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ChatA')}
+            style={{
+              width: 60,
+              height: 60,
+              borderRadius: 60 / 2,
+              marginTop: '80%',
+              marginLeft:'80%',
+              alignItems:'center',
+              justifyContent:'center',
+              // borderRadius: 20,
+              backgroundColor: '#D69CEF'
+            }}>
+              <MaterialCommunityIcons style={{
+                
+              }} name="message-plus-outline" size={40} color="#483D8B" />
 
           </TouchableOpacity>
 

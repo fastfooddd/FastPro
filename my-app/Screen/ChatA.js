@@ -16,7 +16,8 @@ export default function ChatA({ navigation }) {
                 <View style={{
                     width: '100%',
                     height: '30%',
-                    backgroundColor: '#BA55D3',
+                    // borderBottomWidth:1,
+                    backgroundColor: '#D8BFD8',
                     flexDirection: 'row'
                     // borderBottomEndRadius:1
                     // opacity:0.2
@@ -37,7 +38,7 @@ export default function ChatA({ navigation }) {
                             fontSize: 16,
                             fontWeight: 'bold',
                             marginRight: 10,
-                            color: 'white'
+                            color: 'black'
                         }}>
                             ยกเลิก
                         </Text>
@@ -50,10 +51,11 @@ export default function ChatA({ navigation }) {
                             height: '15%',
                             marginTop: '13%',
                             marginLeft: '50%',
-                            backgroundColor: '#9932CC',
+                            backgroundColor: '#D69CEF',
                             alignItems: 'center',
                             justifyContent: 'center',
                             borderRadius: 10,
+                            
                             // borderColor: '#D8BFD8',
                             // borderWidth: 1,
                         }}>
@@ -71,13 +73,14 @@ export default function ChatA({ navigation }) {
                 <View
                     style={{
                         width: '100%',
-                        height: '60%',
+                        height: '70%',
                         // justifyContent: 'center',
                         backgroundColor: 'white',
+                        borderTopWidth:0.2,
                         position: 'absolute',
                         // marginLeft:'5%',
-                        marginTop: '50%',
-                        borderRadius: 20,
+                        marginTop: '30%',
+                        // borderRadius: 20,
                         flexDirection: 'row'
                     }} >
                     <Image
@@ -108,11 +111,11 @@ export default function ChatA({ navigation }) {
                     />
                     
                 </View>
-                    <FontAwesome style={{
+                    {/* <FontAwesome style={{
                         marginTop:'80%',
                         marginLeft:'10%'
                         
-                    }} name="picture-o" size={24} color="black" />
+                    }} name="picture-o" size={24} color="black" /> */}
 
 
 
